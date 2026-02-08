@@ -13,7 +13,7 @@
 |Семестр|Неделя обучения|Тема|Ссылка|
 |:-:|:-:|:-|-:|
 |4|1|Практика 1|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/4797b347aebfa28cfa251fb27af44f770737452c/practice_01.md)|
-|4|1|Практика 2||
+|4|1|Практика 2|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/b80b11faf476b353bc43b57cc6b653491fa76de3/practice_02.md)|
 |4|2|Практика 3||
 |4|2|Практика 4||
 |4|3|Практика 5||
