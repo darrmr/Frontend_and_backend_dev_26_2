@@ -28,7 +28,7 @@
 
 ```js
 const express = require('express');
-const { nanoid } = require("nanoid");
+const { nanoid } = require('nanoid');
 
 const app = express();
 const port = 3000;
@@ -206,6 +206,8 @@ function findUserOr404(id, res) {
 
 ```
 public/
+├─ css/
+│  └─ UsersPage.css
 └─ index.html
 src/
 ├─ api/
@@ -244,7 +246,7 @@ index.html
 ```
 
 index.js
-```js
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -277,7 +279,7 @@ code {
 ```
 
 App.js
-```js
+```jsx
 import UsersPage from "./pages/UsersPage/UsersPage";  
   
 function App() {  
@@ -521,6 +523,256 @@ export default function UserModal({ open, mode, initialUser, onClose, onSubmit }
 }
 ```
 
+#### Стилизуем страницу
+
+Добавим файл UsersPage.scss:
+```scss
+$bg: #0b0f19;  
+$panel: rgba(255, 255, 255, 0.03);  
+$border: rgba(255, 255, 255, 0.10);  
+$text: #e7eaf3;  
+  
+$primary: rgba(99, 102, 241, 0.55);  
+$primaryBg: rgba(99, 102, 241, 0.18);  
+  
+$danger: rgba(239, 68, 68, 0.45);  
+$dangerBg: rgba(239, 68, 68, 0.12);  
+  
+@mixin card($radius: 12px) {  
+  border-radius: $radius;  
+  border: 1px solid $border;  
+  background: $panel;  
+}  
+  
+@mixin container($w: 900px) {  
+  max-width: $w;  
+  width: 100%;  
+  margin: 0 auto;  
+}  
+  
+.page {  
+  min-height: 100vh;  
+  display: flex;  
+  flex-direction: column;  
+  background: $bg;  
+  color: $text;  
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;  
+}  
+  
+.header {  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);  
+  background: rgba(255, 255, 255, 0.02);  
+  
+  &__inner {  
+    @include container();  
+    padding: 14px 16px;  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+  }  
+  
+  &__right {  
+    opacity: 0.75;  
+    font-size: 13px;  
+  }  
+}  
+  
+.brand {  
+  font-weight: 700;  
+  letter-spacing: 0.3px;  
+}  
+  
+.main {  
+  flex: 1;  
+  display: flex;  
+}  
+  
+.container {  
+  @include container();  
+  padding: 16px;  
+}  
+  
+.toolbar {  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  gap: 12px;  
+  margin-bottom: 12px;  
+  
+  .title {  
+    margin: 0;  
+    font-size: 20px;  
+  }  
+}  
+  
+// ===== Buttons =====  
+.btn {  
+  padding: 8px 10px;  
+  border-radius: 10px;  
+  border: 1px solid rgba(255, 255, 255, 0.14);  
+  background: transparent;  
+  color: inherit;  
+  cursor: pointer;  
+  
+  &--primary {  
+    background: $primaryBg;  
+    border: 1px solid $primary;  
+  }  
+  
+  &--danger {  
+    background: $dangerBg;  
+    border: 1px solid $danger;  
+  }  
+}  
+  
+.list {  
+  display: flex;  
+  flex-direction: column;  
+  gap: 10px;  
+}  
+  
+.empty {  
+  padding: 18px;  
+  border-radius: 12px;  
+  border: 1px dashed rgba(255, 255, 255, 0.18);  
+  opacity: 0.85;  
+}  
+  
+.userRow {  
+  @include card(12px);  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  gap: 12px;  
+  padding: 12px;  
+}  
+  
+.userMain {  
+  display: flex;  
+  align-items: center;  
+  gap: 12px;  
+  flex-wrap: wrap;  
+  
+  .userId {  
+    opacity: 0.7;  
+    font-variant-numeric: tabular-nums;  
+  }  
+  
+  .userName {  
+    font-weight: 600;  
+  }  
+  
+  .userAge {  
+    opacity: 0.85;  
+  }  
+}  
+  
+.userActions {  
+  display: flex;  
+  gap: 8px;  
+}  
+  
+.footer {  
+  border-top: 1px solid rgba(255, 255, 255, 0.08);  
+  background: rgba(255, 255, 255, 0.02);  
+  
+  &__inner {  
+    @include container();  
+    padding: 14px 16px;  
+    opacity: 0.7;  
+    font-size: 13px;  
+  }  
+}  
+  
+.backdrop {  
+  position: fixed;  
+  inset: 0;  
+  background: rgba(0, 0, 0, 0.55);  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  padding: 16px;  
+}  
+  
+.modal {  
+  width: 100%;  
+  max-width: 420px;  
+  border-radius: 16px;  
+  border: 1px solid rgba(255, 255, 255, 0.12);  
+  background: #0f1526;  
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);  
+  overflow: hidden;  
+  
+  &__header {  
+    padding: 12px;  
+    border-bottom: 1px solid $border;  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+  }  
+  
+  &__title {  
+    font-weight: 700;  
+  }  
+  
+  &__footer {  
+    display: flex;  
+    justify-content: flex-end;  
+    gap: 8px;  
+    margin-top: 4px;  
+  }  
+}  
+  
+.iconBtn {  
+  width: 34px;  
+  height: 34px;  
+  border-radius: 10px;  
+  border: 1px solid rgba(255, 255, 255, 0.12);  
+  background: transparent;  
+  color: inherit;  
+  cursor: pointer;  
+}  
+  
+.form {  
+  padding: 12px;  
+  display: flex;  
+  flex-direction: column;  
+  gap: 10px;  
+}  
+  
+.label {  
+  display: flex;  
+  flex-direction: column;  
+  gap: 6px;  
+  font-size: 13px;  
+  opacity: 0.95;  
+}  
+  
+.input {  
+  padding: 10px 12px;  
+  border-radius: 12px;  
+  border: 1px solid rgba(255, 255, 255, 0.12);  
+  background: rgba(255, 255, 255, 0.04);  
+  color: inherit;  
+  outline: none;  
+}
+```
+
+Теперь для автоматической генерации css из sass добавим следующую конфигурацию в package.json:
+```json
+"scripts": {  
+    "start": "set PORT=3001 && react-scripts start",  
+    "build": "react-scripts build",  
+    "test": "react-scripts test",  
+    "eject": "react-scripts eject",  
+    "sass": "sass src --style compressed --quiet",  
+    "dev": "npm run sass & npm run start"  
+},
+```
+
+Таким образом, команда `npm run dev` запустит сервер и сгенерирует нужный нам css-файл.
+
+Кроме того, в скрипте `start` приведён пример изменения порта для запуска фронтенда.
 ### Подключение бэкенда к фронтенду
 
 Теперь у нас есть полностью рабочий фронтенд и полностью рабочий бэкенд, осталось связать это в одно целое.
@@ -734,7 +986,7 @@ app.use(cors({
 
 Перезапустим бэкенд и снова перейдём в браузер - всё должно работать.
 
-<img width="2880" height="1360" alt="image" src="https://github.com/user-attachments/assets/0ac47880-4d2c-4ec5-9658-1295be309460" />
+<img alt="image" src="https://github.com/user-attachments/assets/0ac47880-4d2c-4ec5-9658-1295be309460" />
 
 ### Практичкеское задание
 Необходимо доработать рассмотренный пример: два небольших приложение на React и Express (для клиента и сервера, соответственно), связанных в единую систему - сайт интернет-магазина товаров с тематикой на ваше усмотрение. Количество товаров - не менее 10. Карточка товара должна содержать как минимум: название, категорию, описание товара, цену, количество на складе. Опционально доработать рейтинг и фото.
