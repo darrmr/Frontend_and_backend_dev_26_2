@@ -18,8 +18,8 @@
 |4|2|Практика 4|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_04.md)|
 |4|3|Практика 5|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_05.md)|
 |4|3|Практика 6|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_06.md)|
-|4|4|Практика 7||
-|4|4|Практика 8||
+|4|4|Практика 7|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_07.md)|
+|4|4|Практика 8|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_08.md)|
 |4|5|Практика 9||
 |4|5|Практика 10||
 |4|6|Практика 11||
