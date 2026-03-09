@@ -51,7 +51,7 @@ fetch("/api/profile", {
 
 Сервер может установить cookie следующим образом:
 
-```javascript
+```js
 res.cookie("accessToken", token, {
   httpOnly: true,
   secure: true,
