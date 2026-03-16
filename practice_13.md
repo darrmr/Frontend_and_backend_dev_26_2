@@ -43,7 +43,7 @@
 
 Наглядное представление описанных этапов представлено на Рисунке ниже.
 
-<img alt="image" src="image.png" />
+<img alt="image" src="img/image.png /">
 
 #### События Service Worker
 
