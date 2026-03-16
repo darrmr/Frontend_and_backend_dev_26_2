@@ -53,7 +53,7 @@
 
 Пример создания иконок с помощью сервиса ConvertICO представлено на Рисунке ниже.
 
-<img alt="image" src="img/image_14_01.png /">
+<img alt="image" src="https://github.com/user-attachments/assets/c1f94a77-7803-47c3-8963-b6b26740331d" />
 
 **Шаг 2. Создание файла `manifest.json`**
 
@@ -176,7 +176,7 @@ const ASSETS = [
 
 Пример корректного отображение Web App Manifest представлен на Рисунке ниже.
 
-<img alt="image" src="img/image_14_02.png /">
+<img alt="image" src="https://github.com/user-attachments/assets/4f90e302-1999-4ce4-8a91-ac2ed138848c" />
 
 **Проверка установки:**
 - На компьютере в правой части адресной строки в Chrome должна появиться кнопка «Установить» (или значок плюса в круге). Нажмите её – приложение установится и запустится в отдельном окне без элементов браузера. В Яндексе «Дополнительно» -> «Добавить страницу на рабочий стол». В Edge «Другие инструменты» -> «Приложения» -> «Установить этот сайт как приложение»
@@ -184,7 +184,7 @@ const ASSETS = [
 
 Пример иконки установленного приложения представлен на Рисунке ниже.
 
-<img alt="image" src="img/image_14_03.png /">
+<img alt="image" src="https://github.com/user-attachments/assets/f13db7e8-d41a-48b2-86dc-bdfa64b54f65" />
 
 **Lighthouse:**
 В Chrome DevTools на вкладке **Lighthouse** можно запустить аудит PWA. При правильной настройке манифеста и Service Worker будут получены высокие баллы.
