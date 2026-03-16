@@ -70,7 +70,7 @@ http-server --ssl --cert localhost.pem --key localhost-key.pem -p 3000
 
 Откройте в браузере адрес `https://localhost:3000`. Если всё настроено правильно, вы увидите замочек в адресной строке, что представлено на Рисунке ниже. В DevTools на вкладке **Security** должен отображаться статус «Secure».
 
-<img alt="image" src="img/image_15_01.png /">
+<img width="672" height="429" alt="image" src="https://github.com/user-attachments/assets/92981103-db23-4729-9b52-383fa66fc4c7" />
 
 ### Шаг 2. Реализация App Shell для приложения заметок
 
