@@ -96,7 +96,9 @@ notes-app/
 └── sw.js
 ```
 
-#### 2.2 index.html 
+#### 2.2 index.html (каркас приложения)
+
+
 
 ```html
 <!DOCTYPE html>
@@ -135,7 +137,7 @@ notes-app/
 </html>
 ```
 
-#### 2.3 content/home.html 
+#### 2.3 content/home.html (динамический контент главной страницы)
 
 Здесь расположена форма добавления заметок и список заметок. Именно этот фрагмент будет подгружаться при выборе пункта «Главная».
 
@@ -165,7 +167,7 @@ notes-app/
 </div>
 ```
 
-#### 2.5 app.js
+#### 2.5 app.js (основная логика)
 
 В этом файле реализована навигация, загрузка контента через `fetch`, а также функционал заметок (сохранение в `localStorage`). Обратите внимание, что при загрузке страницы «Главная» вызывается `initNotes()` для инициализации формы и списка.
 
@@ -248,7 +250,7 @@ if ('serviceWorker' in navigator) {
 }
 ```
 
-#### 2.6 sw.js
+#### 2.6 sw.js (Service Worker с поддержкой App Shell)
 
 Этот файл содержит логику кэширования. Статические ресурсы (App Shell) кэшируются при установке (стратегия Cache First). Динамические страницы (`/content/*`) загружаются сначала из сети, а при недоступности сети возвращаются из кэша (с фолбеком на `home.html`).
 
@@ -288,14 +290,19 @@ self.addEventListener('activate', event => {
     );
 });
 
+// Для статики – Cache First, для контента – Network First
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
+
+  // Пропускаем запросы к другим источникам (например, к CDN chota)
   if (url.origin !== location.origin) return;
 
+  // Динамические страницы (content/*) – сначала сеть, затем кэш
   if (url.pathname.startsWith('/content/')) {
     event.respondWith(
       fetch(event.request)
         .then(networkRes => {
+          // Кэшируем свежий ответ
           const resClone = networkRes.clone();
           caches.open(DYNAMIC_CACHE_NAME).then(cache => {
             cache.put(event.request, resClone);
