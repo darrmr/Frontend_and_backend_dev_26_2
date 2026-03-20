@@ -341,7 +341,8 @@ self.addEventListener('push', (event) => {
 
 Убедитесь, что иконки по указанным путям существуют (они были добавлены в практической работе №14). При корректном подключении уведомление примет вид:
 
-![alt text](image.png)
+<img width="696" height="255" alt="image" src="https://github.com/user-attachments/assets/7a0b69e5-9ff0-4280-895b-308e0eda7d60" />
+
 
 ### Шаг 3. Запуск и проверка
 
