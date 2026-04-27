@@ -294,8 +294,6 @@ const ORDERS_SERVICE_URL = 'http://service_orders:8000';
 
 **API Aggregation** — Gateway умеет объединять данные из нескольких сервисов в один ответ. Например, эндпоинт `/users/:id/details` параллельно запрашивает информацию о пользователе и его заказах, после чего возвращает агрегированный результат. Оба запроса выполняются одновременно через `Promise.all`, что снижает суммарное время ожидания.
 
----
-
 ### Запуск примера в WSL
 
 #### Переход в директорию проекта
@@ -353,6 +351,10 @@ b2c3d4e5f6a7   project-service_users "npm start"  Up 2 minutes
 c3d4e5f6a7b8   project-service_orders "npm start" Up 2 minutes
 ```
 
+В графическом интерфейсе Docker Desktop запущенные контейнеры примую следующий формат:
+
+<img width="2153" height="512" alt="Снимок экрана 2026-04-27 211509" src="https://github.com/user-attachments/assets/07ba77cf-d2fd-49d7-85a2-e0f3b854b2b9" />
+
 #### Тестирование API
 
 После запуска выполните в терминале WSL:
@@ -385,8 +387,6 @@ docker compose stop service_users
 curl http://localhost:8000/users/1
 # Ожидаемый ответ: {"error": "Users service temporarily unavailable"}
 ```
-
----
 
 ### Полезные команды Docker
 
@@ -452,8 +452,6 @@ docker compose exec api_gateway sh
 ```
 
 После этого вы окажетесь внутри контейнера. Для выхода введите `exit`.
-
----
 
 ### Nginx как балансировщик в Docker Compose
 
