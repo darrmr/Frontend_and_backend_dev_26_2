@@ -64,7 +64,7 @@
 
 Откройте **PowerShell от имени администратора** (Win + X → «Windows PowerShell (администратор)») и выполните:
 
-```powershell
+```sh
 wsl --install
 ```
 
@@ -72,7 +72,7 @@ wsl --install
 
 Если команда выше не сработала, выполните вручную:
 
-```powershell
+```bash
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
@@ -192,6 +192,7 @@ EXPOSE 8000
 CMD ["npm", "start"]
 ```
 
+> [!TIP]
 > **Почему `COPY package*.json` идёт перед `COPY . .`?**  
 > Docker кэширует слои образа. Зависимости меняются редко, а код — часто. Если вынести установку зависимостей в отдельный слой до копирования кода, то при изменении только кода Docker возьмёт слой с `npm install` из кэша и не будет его перезапускать. Это существенно ускоряет сборку.
 
@@ -353,7 +354,7 @@ c3d4e5f6a7b8   project-service_orders "npm start" Up 2 minutes
 
 В графическом интерфейсе Docker Desktop запущенные контейнеры примую следующий формат:
 
-<img width="2153" height="512" alt="Снимок экрана 2026-04-27 211509" src="https://github.com/user-attachments/assets/07ba77cf-d2fd-49d7-85a2-e0f3b854b2b9" />
+<img alt="Снимок экрана 2026-04-27 211509" src="https://github.com/user-attachments/assets/07ba77cf-d2fd-49d7-85a2-e0f3b854b2b9" />
 
 #### Тестирование API
 
@@ -412,6 +413,7 @@ docker compose down -v
 docker compose restart api_gateway
 ```
 
+> [!WARNING]
 > **Осторожно:** `docker compose down -v` удаляет все тома, включая данные баз данных. Используйте только при необходимости полной очистки.
 
 #### Просмотр логов
@@ -667,3 +669,6 @@ networks:
 ### Формат отчета
 
 В качестве ответа на задание необходимо прикрепить ссылку на репозиторий с реализованной практикой.
+
+[^1]: asd
+	
