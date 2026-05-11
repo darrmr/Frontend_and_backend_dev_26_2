@@ -36,10 +36,10 @@
 |4|11|Практика 22|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_22.md)|
 |4|12|Практика 23|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_23.md)|
 |4|12|Практика 24|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_24.md)|
-|4|13|Практика 25||
-|4|13|Практика 26||
-|4|14|Практика 27||
-|4|14|Практика 28||
+|4|13|Практика 25|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_25.md)|
+|4|13|Практика 26|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_26.md)|
+|4|14|Практика 27|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_27.md)|
+|4|14|Практика 28|[Ссылка](https://github.com/darrmr/Frontend_and_backend_dev_26_2/blob/main/practice_28.md)|
 |4|15|Практика 29||
 |4|15|Практика 30||
 |4|16|Практика 31||
