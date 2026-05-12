@@ -478,7 +478,7 @@ function LiveFeed() {
 
 ### Литература
 
-1. [Официальная документация GraphQL](https://graphql.org/learn/)
+1. [Официальная документация GraphQL](https://graphql.org/learn/) 
 2. [Документация Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 3. [Apollo Client (React)](https://www.apollographql.com/docs/react/)
 
