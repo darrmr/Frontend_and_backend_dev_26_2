@@ -511,3 +511,4 @@ WORKER_ID=3 node worker.js
 2. [Библиотека amqplib для Node.js](https://amqplib.github.io/amqplib.js/)
 3. [Документация Apache Kafka](https://kafka.apache.org/documentation/)
 4. [Библиотека KafkaJS](https://kafka.js.org/)
+ 
